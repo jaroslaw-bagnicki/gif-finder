@@ -6,6 +6,7 @@ module.exports = {
         "eslint:recommended",
         "plugin:react/recommended"
     ],
+    "parser": "babel-eslint",
     "parserOptions": {
         "ecmaVersion": 2015,
         "sourceType": "module",
@@ -13,7 +14,7 @@ module.exports = {
 
     },
     "rules": {
-        "indent": ["error",2],
+        "indent": ["error", 2],
         "linebreak-style": ["error", "windows"],
         "quotes": ["error", "single"],
         "semi": ["error", "always"],
