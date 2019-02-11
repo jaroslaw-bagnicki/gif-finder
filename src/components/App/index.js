@@ -35,13 +35,11 @@ export class App extends Component {
       isLoading: true
     });
     service.getGif(searchText)
-      .then( res => {
-        this.setState({
-          gifUrl: res.gifUrl,
-          giphyUrl: res.giphyUrl,
-          isLoading: false
-        });
-      });
+      .then( res => this.setState({
+        gifUrl: res.gifUrl,
+        giphyUrl: res.giphyUrl,
+        isLoading: false
+      }));
   }
 
   toggleIsActive = () => {
