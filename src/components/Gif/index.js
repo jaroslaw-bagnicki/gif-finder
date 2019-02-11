@@ -5,16 +5,16 @@ import styles from './styles.module.scss';
 export class Gif extends Component {
 
   static propTypes = {
-    isStarted: PropTypes.bool,
+    isActive: PropTypes.bool,
     isLoading: PropTypes.bool,
     giphyUrl: PropTypes.string,
     gifUrl: PropTypes.string
   }
 
   render() {
-    const { isStarted, isLoading, giphyUrl, gifUrl } = this.props;
+    const { isActive, isLoading, giphyUrl, gifUrl } = this.props;
     return (
-      isStarted && (
+      isActive && (
         <div className={styles.container}>
           { isLoading ? 
             '-- Loader --' 
