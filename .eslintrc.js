@@ -1,6 +1,6 @@
 module.exports = {
     "env": {
-        "browser": true
+        "browser": true,
     },
     "extends": [
         "eslint:recommended",
@@ -42,9 +42,9 @@ module.exports = {
       ]
     },
     "globals": {
-      "React": true,
-      "ReactDOM": true,
-      "App": true,
-      "Counter": true
+    //   "React": true,
+    //   "ReactDOM": true,
+    //   "App": true,
+    //   "Counter": true
     }
 };

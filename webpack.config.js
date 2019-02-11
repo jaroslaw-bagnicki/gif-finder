@@ -1,3 +1,4 @@
+/* eslint-env node */
 const path = require('path');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
@@ -29,7 +30,12 @@ module.exports = {
       },
       {
         test: /\.scss$/,
+        exclude: /\.module.scss$/,
         use: ['style-loader', 'css-loader', 'sass-loader']
+      },
+      {
+        test: /\.module.scss$/,
+        use: ['style-loader', 'css-loader?modules', 'sass-loader']
       }
     ]
   }
