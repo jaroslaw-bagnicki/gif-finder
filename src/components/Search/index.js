@@ -2,20 +2,26 @@ import React, { Component } from 'react';
 import styles from './styles.module.scss';
 
 export class Search extends Component {
-  render() {
+  state = {
+    searchText: ''
+  };
+
+  render = () => {
     return (
       <div className={styles.container}>
         <input 
           className={styles.searchInput}
           type="text"
           onChange={this.handleChange}
-          value={this.state.inputValue}
+          value={this.state.searchText}
         />
       </div>
     );
   }
 
-  handleChange() {
-    console.log('handleChange');
+  handleChange = (e) => {
+    this.setState({
+      searchText: e.target.value
+    });
   }
 }
