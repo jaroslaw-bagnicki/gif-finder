@@ -34,12 +34,19 @@ export class App extends Component {
       isActive: true,
       isLoading: true
     });
-    const giphyUrls = await service.getGif(searchText);
-    this.setState({
-      gifUrl: giphyUrls.gifUrl,
-      giphyUrl: giphyUrls.giphyUrl,
-      isLoading: false
-    });
+    try {
+      console.log('try block in App start');
+      const res = await service.getGif(searchText);
+      console.log('res log from App', res);
+      this.setState({
+        gifUrl: res.gifUrl,
+        giphyUrl: res.giphyUrl,
+        isLoading: false
+      });
+    } catch(err) {
+      console.log('catch block in App reached');
+      console.log(err);
+    }
   }
 
   toggleIsActive = () => {
