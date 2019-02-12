@@ -29,17 +29,17 @@ export class App extends Component {
     );
   }
 
-  handleSearch = (searchText) => {
+  handleSearch = async (searchText) => {
     this.setState({
       isActive: true,
       isLoading: true
     });
-    service.getGif(searchText)
-      .then( res => this.setState({
-        gifUrl: res.gifUrl,
-        giphyUrl: res.giphyUrl,
-        isLoading: false
-      }));
+    const giphyUrls = await service.getGif(searchText);
+    this.setState({
+      gifUrl: giphyUrls.gifUrl,
+      giphyUrl: giphyUrls.giphyUrl,
+      isLoading: false
+    });
   }
 
   toggleIsActive = () => {
